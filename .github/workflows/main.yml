@@ -21,4 +21,4 @@ jobs:
      #finally build your app with the latest command
       - name: Build and test with Maven
         working-directory: TP1/SpringbootApp/simple-api-student/
-        run: mvn verify
+        run: mvn clean verify
