@@ -8,9 +8,9 @@ spring:
     generate-ddl: false
     open-in-view: true
   datasource:
-    url: jdbc:postgresql://${POSTGRES_URL}/${POSTGRES_DB}
+    url: jdbc:postgresql://${URL}/${POSTGRES_DB}
     username: ${POSTGRES_USER}
-    password: ${POSTGRES_PWD}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
 management:
  server:
