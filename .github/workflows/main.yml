@@ -21,7 +21,7 @@ jobs:
      #finally build your app with the latest command
       - name: Build and test with Maven
         working-directory: TP1/simple-api-student
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=remitranvanba_DevOps-module -Dsonar.organization=remitranvanba -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        run: mvn -B clean verify deploy sonar:sonar -Dsonar.projectKey=remitranvanba_DevOps-module -Dsonar.organization=remitranvanba -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
 
   # define job to build and publish docker image
