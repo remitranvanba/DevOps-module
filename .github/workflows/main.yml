@@ -6,7 +6,6 @@ on:
 
 jobs:
   test-backend: 
-    needs: test-backend
     runs-on: ubuntu-22.04
     steps:
      #checkout your github code using actions/checkout@v2.5.0
@@ -67,6 +66,7 @@ jobs:
           push: ${{ github.ref == 'refs/heads/master' }}
 
   sonarcloud:
+    needs: test-backend
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
