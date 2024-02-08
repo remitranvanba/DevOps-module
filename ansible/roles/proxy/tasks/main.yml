@@ -1,0 +1,13 @@
+- name: Run HTTPD
+  docker_container:
+    name: my-apache-server
+    image: remitranvanba/http-server:latest
+    networks:
+      - name: "{{ NETWORK }}" 
+    ports:
+      - 8080:80
+    recreate: true
+    pull: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    

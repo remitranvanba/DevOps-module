@@ -1,0 +1,16 @@
+- name: Run Postgres
+  docker_container:
+    name: "{{ POSTGRES_CONTAINER }}" 
+    image: remitranvanba/database:latest
+    networks:
+      - name: "{{ NETWORK }}" 
+    env:
+      POSTGRES_DB: "{{ POSTGRES_DB }}" 
+      POSTGRES_USER: "{{ POSTGRES_USER }}" 
+      POSTGRES_PASSWORD: "{{ POSTGRES_PASSWORD }}" 
+    volumes:
+      - myvolume:/var/lib/postgresql/data
+    recreate: true
+    pull: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
